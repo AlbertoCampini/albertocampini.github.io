@@ -70,7 +70,6 @@ if (navToggle) {
 if (navToggleColor) {
     navToggleColor.addEventListener('click', () => {
         navMenuColor.classList.add('show-menu')
-        console.log("hello")
     })
 }
 navChangeLanguages.forEach(navChangeLanguage =>{
@@ -89,14 +88,12 @@ navChangeLanguages.forEach(navChangeLanguage =>{
 if (navClose) {
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu')
-        console.log("ciao13")
     })
 }
 
 if (navCloseColor) {
     navCloseColor.addEventListener('click', () => {
         navMenuColor.classList.remove('show-menu')
-        console.log("ciao1")
     })
 }
 
