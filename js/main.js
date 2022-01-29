@@ -1,8 +1,34 @@
+let options = {
+    classname: "toast",
+    transition: "fade",
+    insertBefore: true,
+    duration: 4000,
+    enableSounds: true,
+    autoClose: true,
+    progressBar: true,
+    sounds: {
+        info: "sounds/info/1.mp3",
+        success: "sounds/success/1.mp3",
+        warning: "sounds/warning/1.mp3",
+        error: "sounds/error/1.mp3",
+    },
 
+    // callback:
+    // onShow function will be fired when a toast message appears.
+    onShow: function (type) {},
 
+    // callback:
+    // onHide function will be fired when a toast message disappears.
+    onHide: function (type) {},
+
+    // the placement where prepend the toast container:
+    prependTo: document.body.childNodes[0]
+};
+
+let toast = new Toasty(options)
 
 function wrapperChangeLanguage() {
-    if (running_language == "it") {
+    if (running_language === "it") {
         changeLanguage(json_langauge.english, "en")
 
     } else {
@@ -25,13 +51,21 @@ function submitMessage() {
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
     const check = document.getElementById("check").checked;
-
     const outputMessage = document.getElementById("outputMessage");
 
-    if(name !== '' && surname !== '' && email !== '' && message !== '' && check === true){
+
+
+
+    if(name !== '' && surname !== '' && email !== '' && message !== '' && check === true && /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
+        toast.success("Messaggio inviato correttamente")
+        document.querySelectorAll(".contact__input").forEach(function (element){
+            element.value = ""
+        })
 
     }else{
-        outputMessage.innerHTML= "Controlla di aver inserito correttamente i dati"
+
+        toast.error("Controlla di aver inserito correttamente i dati")
+
     }
 
 }
@@ -58,6 +92,7 @@ const navMenu = document.getElementById('nav-menu'),
     navCloseColor = document.getElementById('nav-close-color'),
     navClose = document.getElementById('nav-close'),
     navChangeLanguages = document.querySelectorAll('.change-language')
+    navChangeVolume= document.querySelectorAll('.change-volume')
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
@@ -76,6 +111,24 @@ navChangeLanguages.forEach(navChangeLanguage =>{
     if (navChangeLanguage) {
         navChangeLanguage.addEventListener('click', () => {
             wrapperChangeLanguage()
+        })
+    }
+})
+
+navChangeVolume.forEach(navChangeVolume =>{
+    const topBarVolume = document.getElementById('change-volume-topbar')
+    if (navChangeVolume) {
+        navChangeVolume.addEventListener('click', () => {
+            options.enableSounds = !options.enableSounds
+            toast = new Toasty(options)
+
+            if(topBarVolume.classList.contains("uil-volume")){
+                topBarVolume.classList.remove("uil-volume")
+                topBarVolume.classList.add("uil-volume-mute")
+            }else{
+                topBarVolume.classList.add("uil-volume")
+                topBarVolume.classList.remove("uil-volume-mute")
+            }
         })
     }
 })

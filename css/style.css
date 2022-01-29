@@ -47,17 +47,7 @@
     --z-modal: 1000;
 }
 
-@media screen and (min-width: 968) {
-     :root {
-        --big-font-size: 3rem;
-        --h1-font-size: 2.5rem;
-        --h2-font-size: 2.25rem;
-        --h3-font-size: 2.125rem;
-        --normale-font-size: 1rem;
-        --small-font-size: .875rem;
-        --smaller-font-size: .813rem;
-    }
-}
+
 
 
 /*========== Variables Dark theme ==========*/
@@ -83,6 +73,7 @@ body.dark-theme{
 }
 .change-theme,
 .change-language-topbar,
+.change-volume-topbar,
 .change-color{
     cursor: pointer;
     margin-right: var(--mb-1);
@@ -95,7 +86,8 @@ body.dark-theme{
 }
 
 .change-theme:hover,
-.change-language:hover{
+.change-language:hover,
+.change-volume-topbar:hover{
 
     color: var(--first-color);
 }
@@ -139,6 +131,7 @@ img {
     max-width: 100%;
     height: auto;
 }
+
 
 
 /*==================== REUSABLE CSS CLASSES ====================*/
@@ -192,7 +185,7 @@ img {
 
 .custom-container-check-box,
 .container-check-box {
-    font-size:var(--small-font-sizeS) ;
+    font-size:var(--small-font-size) ;
     display: block;
     position: relative;
     padding-left: 35px;
@@ -501,6 +494,7 @@ img {
     padding: 1rem;
     color: #fff;
     font-weight: var(--font-medium);
+    cursor: pointer;
 }
 
 .button:hover{
@@ -708,7 +702,7 @@ font-weight: var(--font-medium);
     margin-bottom: var(--mb-1);
 }
 
-.qualification__calnedar{
+.qualification__calendar{
     font-size: var(--smaller-font-size);
     color: var(--text-color-light);
 }
@@ -813,7 +807,7 @@ background-color: var(--first-color) !important;
     display: grid;
     place-items: center;
   }
-  
+
   .modal__button{
     display: inline-block;
     background-color: var(--first-color);
@@ -822,11 +816,11 @@ background-color: var(--first-color) !important;
     border-radius: .5rem;
     transition: .3s;
   }
-  
+
   .modal__button:hover{
     background-color: var(--first-color-alt);
   }
-  
+
   .modal__container{
     position: absolute;
     top: 0;
@@ -841,11 +835,11 @@ background-color: var(--first-color) !important;
     z-index: var(--z-modal);
     visibility: hidden;
     opacity: 0;
-  
+
     /*=== Effect 3 ===*/
     /* perspective: 1000px; */
   }
-  
+
   .modal__content{
     position: relative;
     background-color: var(--container-color);
@@ -853,23 +847,23 @@ background-color: var(--first-color) !important;
     padding: 3rem 2rem 2rem;
     border-radius: 1rem 1rem 0 0;
     transition: all .3s;
-  
+
     /*=== Effect 1 ===*/
     transform: translateY(10%);
-  
+
     /*=== Effect 2 ===*/
     /* transform: scale(.5) translateY(10%); */
-  
+
     /*=== Effect 3 ===*/
     /* transform: rotateX(65deg) scale(.75) translateY(10%);
     transform-origin: 50% 100%; */
   }
-  
+
   .modal__img{
     width: 150px;
     margin-bottom: .75rem;
   }
-  
+
   .modal__close{
     display: inline-flex;
     background-color: var(--first-color);
@@ -881,21 +875,21 @@ background-color: var(--first-color) !important;
     right: 2rem;
     cursor: pointer;
   }
-  
+
   .modal__title{
     font-size: var(--big-font-size);
     color: var(--title-color);
     font-weight: 500;
   }
-  
+
   .modal__description{
     margin-bottom: 1.5rem;
   }
-  
+
   .modal__button-width{
     width: 90%;
   }
-  
+
   .modal__button-link{
     display: block;
     margin: 1rem auto 0;
@@ -903,20 +897,20 @@ background-color: var(--first-color) !important;
     color: var(--first-color);
     font-weight: 500;
   }
-  
+
   /* Show modal */
   .show-modal{
     visibility: visible;
     opacity: 1;
   }
-  
+
   .show-modal .modal__content{
     /*=== Effect 1 ===*/
     transform: translateY(0);
-  
+
     /*=== Effect 2 ===*/
     /* transform: scale(1) translateY(0); */
-  
+
     /*=== Effect 3 ===*/
     /* transform: rotateX(0) scale(1) translateY(0); */
   }

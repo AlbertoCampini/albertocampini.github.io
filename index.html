@@ -32,8 +32,8 @@
     <link rel="manifest" href="js/manifest.json">
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="css/style.min.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toasty.min.css">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
 
@@ -102,6 +102,8 @@
                         <span id="language-txt"></span>
                     </a>
                 </li>
+
+
             </ul>
             <i class="uil uil-times nav__close nav__icon" id="nav-close"></i>
         </div>
@@ -111,11 +113,12 @@
             </div>
 
             <i class="uil uil-english-to-chinese change-language change-language-topbar"></i>
+            <i class="uil uil-volume change-volume change-volume-topbar" id="change-volume-topbar"></i>
             <i class="uil uil-moon change-theme" id=theme-button></i>
             <div class="nav__toggle" id="nav-toggle">
                 <i class="uil uil-apps nav__icon"></i>
             </div>
-        </div> 
+        </div>
     </nav>
 
 </header>
@@ -222,6 +225,7 @@
                         <span class="about__info-title">02+</span>
                         <span id="about__info-companies-txt" class="about__info-name"></span>
                     </div>
+
                 </div>
 
                 <div class="about__buttons">
@@ -255,8 +259,8 @@
                     <i class="uil uil-brain skills__icon"></i>
                     <div>
                         <h1 class="skills__title">AI developer</h1>
-                        <span class="skills__subtitile">
-                                <span id="AI-skills__subtitile-txt">
+                        <span class="skills__subtitle">
+                                <span id="AI-skills__subtitle-txt">
                                 </span>
                             </span>
 
@@ -271,7 +275,7 @@
                             <span class="skills__number">60%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__html"></span>
+                            <span class="skills__percentage skills__angular"></span>
                         </div>
                     </div>
 
@@ -314,8 +318,8 @@
                     <i class="uil uil-puzzle-piece skills__icon"></i>
                     <div>
                         <h1 class="skills__title">BI developer</h1>
-                        <span class="skills__subtitile">
-                                <span id="BI-skills__subtitile-txt">
+                        <span class="skills__subtitle">
+                                <span id="BI-skills__subtitle-txt">
                                 </span>
                             </span>
 
@@ -336,6 +340,24 @@
                     <div class="skills__data">
                         <div class="skills__titles">
                             <h2 class="skills__name">DAX</h2>
+                            <span class="skills__number">80%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage skills__js"></span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h2 class="skills__name">Power Query</h2>
+                            <span class="skills__number">80%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage skills__js"></span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h2 class="skills__name">Tabular</h2>
                             <span class="skills__number">80%</span>
                         </div>
                         <div class="skills__bar">
@@ -382,8 +404,8 @@
                     <i class="uil uil-brackets-curly skills__icon"></i>
                     <div>
                         <h1 class="skills__title">Frontend developer</h1>
-                        <span class="skills__subtitile">
-                                <span id="Frontend-skills__subtitile-txt">
+                        <span class="skills__subtitle">
+                                <span id="Frontend-skills__subtitle-txt">
                                 </span>
                             </span>
                     </div>
@@ -423,7 +445,7 @@
 
                     <div class="skills__data">
                         <div class="skills__titles">
-                            <h2 class="skills__name">React Native</h2>
+                            <h2 class="skills__name">React</h2>
                             <span class="skills__number">80%</span>
                         </div>
                         <div class="skills__bar">
@@ -449,8 +471,8 @@
                     <i class="uil uil-server skills__icon"></i>
                     <div>
                         <h1 class="skills__title">Backend developer</h1>
-                        <span class="skills__subtitile">
-                                <span id="Backend-skills__subtitile-txt">
+                        <span class="skills__subtitle">
+                                <span id="Backend-skills__subtitle-txt">
                                 </span>
                             </span>
                     </div>
@@ -510,6 +532,57 @@
                 </div>
 
             </div>
+
+            <div class="skills__content skills__close">
+                <div class="skills__header">
+                    <i class="uil uil-sitemap skills__icon"></i>
+                    <div>
+                        <h1 class="skills__title">Software Architecture</h1>
+                        <span class="skills__subtitle">
+                                <span id="SW-skills__subtitle-txt">
+                                </span>
+                            </span>
+
+
+                    </div>
+                    <i class="uil uil-angle-down skills__arrow"></i>
+                </div>
+                <div class="skills__list grid">
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h2 class="skills__name">Docker</h2>
+                            <span class="skills__number">60%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage skills__angular"></span>
+                        </div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h2 class="skills__name">Kubernetes</h2>
+                            <span class="skills__number">60%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage skills__angular"></span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="skills__data">
+                         <div class="skills__titles">
+                             <h2 class="skills__name"></h2>
+                             <span class="skills__number">90%</span>
+                         </div>
+                         <div class="skills__bar">
+                             <span class="skills__percentage skills__css"></span>
+                         </div>
+                     </div>
+
+
+                      -->
+
+                </div>
+            </div>
         </div>
 
 
@@ -540,6 +613,12 @@
                     <span id="qualification-work-button-txt">
                         </span>
                 </div>
+
+                <div class="qualification__button button--flex" data-target="#publishing">
+                    <i class="uil uil-book qualification__icon"></i>
+                    <span id="qualification-publishing-button-txt">
+                        </span>
+                </div>
             </div>
             <div class="qualification__sections">
 
@@ -548,7 +627,7 @@
                         <div>
                             <h2 class="qualification__title">Information Tecology</h2>
                             <span class="qualification__subtitle">Asti - ITIS</span>
-                            <div class="qualification__calnedar">
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2013 - 2018
                             </div>
@@ -566,9 +645,9 @@
                             <span class="qualification__line"></span>
                         </div>
                         <div>
-                            <h2 class="qualification__title">Computer sience</h2>
+                            <h2 class="qualification__title">Computer science</h2>
                             <span class="qualification__subtitle">Torino - University</span>
-                            <div class="qualification__calnedar">
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2018 - 2021
                             </div>
@@ -579,7 +658,7 @@
                         <div>
                             <h2 class="qualification__title">Artificial intelligence</h2>
                             <span class="qualification__subtitle">Torino - University</span>
-                            <div class="qualification__calnedar">
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2021 - Today
                             </div>
@@ -603,7 +682,7 @@
                         <div>
                             <h2 class="qualification__title">Software developer</h2>
                             <span class="qualification__subtitle">Asti - Dedalus</span>
-                            <div class="qualification__calnedar">
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2020 - 2021
                             </div>
@@ -614,7 +693,7 @@
                         <div>
                             <h2 class="qualification__title">Full satck developer</h2>
                             <span class="qualification__subtitle">Asti - ABC Labs</span>
-                            <div class="qualification__calnedar">
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2019 - Today
                             </div>
@@ -631,9 +710,9 @@
 
                         </div>
                         <div>
-                            <h2 class="qualification__title">AI developer</h2>
+                            <h2 class="qualification__title">AI & BI developer</h2>
                             <span class="qualification__subtitle">Torino - reply</span>
-                            <div class="qualification__calnedar">
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2021 - Today
                             </div>
@@ -678,7 +757,7 @@
                     <div class="portfolio__data">
                         <h2 id="abclabs-dashboard-portfolio__title-txt" class="portfolio__title"></h2>
                         <p id="abclabs-dashboard-portfolio__description-txt" class="portfolio__description"></p>
-                        <a href="abclabs.it" target="blank" class="button button--flex button--small portfolio__button">
+                        <a href="https://abclabs.it" target="blank" class="button button--flex button--small portfolio__button">
                             Demo
                             <i class="uil uil-arrow-right button__icon"></i>
                         </a>
@@ -761,12 +840,12 @@
                 </div>
                 <div class="contact__content">
                     <label for="message" id="message-contact__label-txt" class="contact__label"></label>
-                    <textarea id="message" type="text" cols="0" rows="7" class="contact__input" required></textarea>
+                    <textarea id="message" cols="0" rows="7" class="contact__input" required></textarea>
                 </div>
 
                     <label class="container-check-box">
                         Accetto <a class="contact__link" href="#">Termini e condizioni</a>
-                        <input id="check" type="checkbox">
+                        <input id="check" type="checkbox" class="contact__input">
                         <span class="checkmark"></span>
                     </label>
 
@@ -780,7 +859,7 @@
                         </a>
                     </div>
                     <div>
-                        <p id="outputMessage"></p>
+                        <span id="outputMessage"></span>
                     </div>
                 </div>
             </form>
@@ -796,7 +875,7 @@
         <div class="footer__container container grid">
             <div>
                 <h1 class="footer__title">Alberto</h1>
-                <span class="footer__subtitle"></span>
+                <span class="footer__subtitle" id="footer-subtitle-text"></span>
             </div>
             <ul class="footer__links">
                 <li>
@@ -847,9 +926,10 @@
 <!--==================== MAIN JS ====================-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<script src="js/toasty.min.js"></script>
 <script src="js/language.js"></script>
 <script src="js/main.js"></script>
+
 
 </body>
 
