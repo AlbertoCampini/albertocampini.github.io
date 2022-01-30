@@ -1,8 +1,10 @@
+
+/*==================== MANAGE TOASTY ====================*/
 let options = {
     classname: "toast",
     transition: "fade",
     insertBefore: true,
-    duration: 4000,
+    duration: 3000,
     enableSounds: true,
     autoClose: true,
     progressBar: true,
@@ -12,33 +14,30 @@ let options = {
         warning: "sounds/warning/1.mp3",
         error: "sounds/error/1.mp3",
     },
-
-    // callback:
-    // onShow function will be fired when a toast message appears.
     onShow: function (type) {},
-
-    // callback:
-    // onHide function will be fired when a toast message disappears.
     onHide: function (type) {},
-
-    // the placement where prepend the toast container:
     prependTo: document.body.childNodes[0]
 };
 
 let toast = new Toasty(options)
 
-function wrapperChangeLanguage() {
-    if (running_language === "it") {
-        changeLanguage(json_langauge.english, "en")
+/*==================== MANAGE LANGUAGE ====================*/
+let running_language = (navigator.language || navigator.userLanguage).substring(0, 2);
 
+changeLanguage(running_language)
+
+function wrapperChangeLanguage() {
+    if (running_language === 'it') {
+
+        changeLanguage('en')
     } else {
 
-        changeLanguage(json_langauge.italiano, "it")
+        changeLanguage('it')
 
     }
 }
-function changeLanguage(language, string) {
-
+function changeLanguage(string) {
+    let language = string === 'en' ? json_langauge.english : json_langauge.italiano
     Object.keys(language).forEach(function (key) {
         $("#" + language[key].id).html(language[key].html)
     });
@@ -57,32 +56,18 @@ function submitMessage() {
 
 
     if(name !== '' && surname !== '' && email !== '' && message !== '' && check === true && /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
-        toast.success("Messaggio inviato correttamente")
+        running_language === 'it' ?  toast.success("Messaggio inviato correttamente") :toast.success("Message sent correctly")
         document.querySelectorAll(".contact__input").forEach(function (element){
             element.value = ""
         })
 
     }else{
-
-        toast.error("Controlla di aver inserito correttamente i dati")
+        running_language === 'it' ? toast.error("Controlla di aver inserito correttamente i dati all'interno del form"):toast.error("Check that you have correctly inserted the data within the module")
 
     }
 
 }
 
-function changeColor(value){
-    document.documentElement.style.setProperty("--hue-color", value);
-
-}
-
-
-
-
-/*==================== MANAGE LANGUAGE ====================*/
-let running_language = (navigator.language || navigator.userLanguage).substring(0, 2);
-
-
-changeLanguage(json_langauge.english, "en")
 
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById('nav-menu'),
@@ -311,3 +296,7 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+function changeColor(value){
+    document.documentElement.style.setProperty("--hue-color", value);
+
+}

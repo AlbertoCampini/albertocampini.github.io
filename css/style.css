@@ -702,6 +702,11 @@ font-weight: var(--font-medium);
     margin-bottom: var(--mb-1);
 }
 
+.qualification__subtitle__no__margin{
+    display: inline-block;
+    font-size: var(--small-font-size);
+}
+
 .qualification__calendar{
     font-size: var(--smaller-font-size);
     color: var(--text-color-light);
@@ -1077,13 +1082,21 @@ background-color: var(--first-color) !important;
 
 
 /* For small devices */
+@media screen and (max-width: 500px){
+    #qualification-education-button-txt,
+    #qualification-work-button-txt,
+    #qualification-publishing-button-txt{
+        font-size: var(--small-font-size);
+    }
+
+}
 @media screen and (max-width: 350px) {
     .container{
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
     }
     .nav__menu{
-        padding:2rem 25rem 4rem ;
+        margin-left: auto;
     }
 
     .nav__list{
@@ -1163,6 +1176,8 @@ background-color: var(--first-color) !important;
   .modal__img{
     width: 170px;
   }
+
+
 }
 @media screen and (min-width: 768px) {
 
@@ -1324,6 +1339,8 @@ background-color: var(--first-color) !important;
     .footer__copy{
         margin-top: 4.5rem;
     }
+
+
 }
 
 /* For large devices */
