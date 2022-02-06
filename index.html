@@ -7,6 +7,10 @@
     <meta name="Description"
           content="Sono Alberto Campini studente dell'università degli studi di Torino, co-fondatore di ABC Labs e dipendente presso Reply">
 
+    <meta name="author" content="Alberto Campini">
+
+    <meta name="keywords" content="Portfolio, Web-design, Css">
+
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="hsl(230, 60%, 99%)">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="hsl(230, 28%, 12%)">
 
@@ -33,7 +37,7 @@
 
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="css/style.min.css">
-
+    <link rel="stylesheet" href="css/toasty.min.css">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
 
@@ -102,6 +106,8 @@
                         <span id="language-txt"></span>
                     </a>
                 </li>
+
+
             </ul>
             <i class="uil uil-times nav__close nav__icon" id="nav-close"></i>
         </div>
@@ -111,11 +117,16 @@
             </div>
 
             <i class="uil uil-english-to-chinese change-language change-language-topbar"></i>
+            <audio id="audio-change-language" src="sounds/info/1.mp3"></audio>
+            <i class="uil uil-volume change-volume change-volume-topbar" id="change-volume-topbar"></i>
+            <audio id="audio-change-volume" src="sounds/info/2.mp3"></audio>
             <i class="uil uil-moon change-theme" id=theme-button></i>
+            <audio id="audio-switch-on" src="sounds/switch/switch-on.mp3"></audio>
+            <audio id="audio-switch-off" src="sounds/switch/switch-off.mp3"></audio>
             <div class="nav__toggle" id="nav-toggle">
                 <i class="uil uil-apps nav__icon"></i>
             </div>
-        </div> 
+        </div>
     </nav>
 
 </header>
@@ -177,7 +188,7 @@
             </div>
 
             <div class="home__scroll">
-                <a href="#" class="home__scroll-button button--flex">
+                <a href="#about" class="home__scroll-button button--flex">
                     <i class="uil uil-mouse-alt home__scroll-mouse"></i>
                     <span class="home__scroll-name">
                             <span id="scroll-txt">
@@ -203,25 +214,29 @@
                 </span>
             </span>
         <div class="about__container container grid">
-            <img src="img/about.jpg" alt="about image" class="about__img">
+
+                <img src="img/about.jpg" alt="about image" class="about__img">
+
+
 
             <div class="about__data">
                 <p class="about__description" id="about__description-txt">
-
                 </p>
+
                 <div class="about__info">
-                    <div>
+                    <div class="about__info__content">
                         <span id="about__info-experience-number-txt" class="about__info-title"></span>
                         <span id="about__info-experience-txt" class="about__info-name"></span>
                     </div>
-                    <div>
+                    <div class="about__info__content">
                         <span class="about__info-title">10+</span>
                         <span id="about__info-project-txt" class="about__info-name"></span>
                     </div>
-                    <div>
+                    <div class="about__info__content">
                         <span class="about__info-title">02+</span>
                         <span id="about__info-companies-txt" class="about__info-name"></span>
                     </div>
+
                 </div>
 
                 <div class="about__buttons">
@@ -255,8 +270,8 @@
                     <i class="uil uil-brain skills__icon"></i>
                     <div>
                         <h1 class="skills__title">AI developer</h1>
-                        <span class="skills__subtitile">
-                                <span id="AI-skills__subtitile-txt">
+                        <span class="skills__subtitle">
+                                <span id="AI-skills__subtitle-txt">
                                 </span>
                             </span>
 
@@ -271,7 +286,7 @@
                             <span class="skills__number">60%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__html"></span>
+                            <span class="skills__percentage skills__60"></span>
                         </div>
                     </div>
 
@@ -314,8 +329,8 @@
                     <i class="uil uil-puzzle-piece skills__icon"></i>
                     <div>
                         <h1 class="skills__title">BI developer</h1>
-                        <span class="skills__subtitile">
-                                <span id="BI-skills__subtitile-txt">
+                        <span class="skills__subtitle">
+                                <span id="BI-skills__subtitle-txt">
                                 </span>
                             </span>
 
@@ -330,7 +345,7 @@
                             <span class="skills__number">90%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__html"></span>
+                            <span class="skills__percentage skills__90"></span>
                         </div>
                     </div>
                     <div class="skills__data">
@@ -339,7 +354,25 @@
                             <span class="skills__number">80%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__js"></span>
+                            <span class="skills__percentage skills__80"></span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h2 class="skills__name">Power Query</h2>
+                            <span class="skills__number">80%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage skills__80"></span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h2 class="skills__name">Tabular</h2>
+                            <span class="skills__number">80%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage skills__75"></span>
                         </div>
                     </div>
 
@@ -382,8 +415,8 @@
                     <i class="uil uil-brackets-curly skills__icon"></i>
                     <div>
                         <h1 class="skills__title">Frontend developer</h1>
-                        <span class="skills__subtitile">
-                                <span id="Frontend-skills__subtitile-txt">
+                        <span class="skills__subtitle">
+                                <span id="Frontend-skills__subtitle-txt">
                                 </span>
                             </span>
                     </div>
@@ -397,17 +430,17 @@
                             <span class="skills__number">95%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__html"></span>
+                            <span class="skills__percentage skills__95"></span>
                         </div>
                     </div>
 
                     <div class="skills__data">
                         <div class="skills__titles">
                             <h2 class="skills__name">CSS 3</h2>
-                            <span class="skills__number">85%</span>
+                            <span class="skills__number">90%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__css"></span>
+                            <span class="skills__percentage skills__90"></span>
                         </div>
                     </div>
 
@@ -417,17 +450,17 @@
                             <span class="skills__number">80%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__js"></span>
+                            <span class="skills__percentage skills__80"></span>
                         </div>
                     </div>
 
                     <div class="skills__data">
                         <div class="skills__titles">
-                            <h2 class="skills__name">React Native</h2>
+                            <h2 class="skills__name">React</h2>
                             <span class="skills__number">80%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__js"></span>
+                            <span class="skills__percentage skills__80"></span>
                         </div>
                     </div>
 
@@ -437,7 +470,7 @@
                             <span class="skills__number">60%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__angular"></span>
+                            <span class="skills__percentage skills__60"></span>
                         </div>
                     </div>
                 </div>
@@ -449,8 +482,8 @@
                     <i class="uil uil-server skills__icon"></i>
                     <div>
                         <h1 class="skills__title">Backend developer</h1>
-                        <span class="skills__subtitile">
-                                <span id="Backend-skills__subtitile-txt">
+                        <span class="skills__subtitle">
+                                <span id="Backend-skills__subtitle-txt">
                                 </span>
                             </span>
                     </div>
@@ -463,7 +496,7 @@
                             <span class="skills__number">95%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__php"></span>
+                            <span class="skills__percentage skills__95"></span>
                         </div>
                     </div>
 
@@ -473,17 +506,17 @@
                             <span class="skills__number">95%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__php"></span>
+                            <span class="skills__percentage skills__95"></span>
                         </div>
                     </div>
 
                     <div class="skills__data">
                         <div class="skills__titles">
                             <h2 class="skills__name">Java</h2>
-                            <span class="skills__number">90%</span>
+                            <span class="skills__number">95%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__java"></span>
+                            <span class="skills__percentage skills__95"></span>
                         </div>
                     </div>
 
@@ -494,7 +527,7 @@
                             <span class="skills__number">90%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__C"></span>
+                            <span class="skills__percentage skills__90"></span>
                         </div>
                     </div>
 
@@ -504,11 +537,62 @@
                             <span class="skills__number">60%</span>
                         </div>
                         <div class="skills__bar">
-                            <span class="skills__percentage skills__node"></span>
+                            <span class="skills__percentage skills__60"></span>
                         </div>
                     </div>
                 </div>
 
+            </div>
+
+            <div class="skills__content skills__close">
+                <div class="skills__header">
+                    <i class="uil uil-sitemap skills__icon"></i>
+                    <div>
+                        <h1 class="skills__title">Software Architecture</h1>
+                        <span class="skills__subtitle">
+                                <span id="SW-skills__subtitle-txt">
+                                </span>
+                            </span>
+
+
+                    </div>
+                    <i class="uil uil-angle-down skills__arrow"></i>
+                </div>
+                <div class="skills__list grid">
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h2 class="skills__name">Docker</h2>
+                            <span class="skills__number">75%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage skills__75"></span>
+                        </div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h2 class="skills__name">Kubernetes</h2>
+                            <span class="skills__number">70%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage skills__70"></span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="skills__data">
+                         <div class="skills__titles">
+                             <h2 class="skills__name"></h2>
+                             <span class="skills__number">90%</span>
+                         </div>
+                         <div class="skills__bar">
+                             <span class="skills__percentage skills__css"></span>
+                         </div>
+                     </div>
+
+
+                      -->
+
+                </div>
             </div>
         </div>
 
@@ -540,15 +624,21 @@
                     <span id="qualification-work-button-txt">
                         </span>
                 </div>
+
+                <!--<div class="qualification__button button--flex" data-target="#publishing">
+                    <i class="uil uil-book qualification__icon"></i>
+                    <span id="qualification-publishing-button-txt">
+                        </span>
+                </div> -->
             </div>
             <div class="qualification__sections">
 
                 <div class="qualification__content qualification__active" data-content id="education">
                     <div class="qualification__data">
                         <div>
-                            <h2 class="qualification__title">Information Tecology</h2>
+                            <h2 class="qualification__title">Information Technology</h2>
                             <span class="qualification__subtitle">Asti - ITIS</span>
-                            <div class="qualification__calnedar">
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2013 - 2018
                             </div>
@@ -566,22 +656,64 @@
                             <span class="qualification__line"></span>
                         </div>
                         <div>
-                            <h2 class="qualification__title">Computer sience</h2>
-                            <span class="qualification__subtitle">Torino - University</span>
-                            <div class="qualification__calnedar">
+                            <h2 class="qualification__title">B1 Preliminary English</h2>
+                            <span class="qualification__subtitle">British schools</span>
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
-                                2018 - 2021
+                                2018
                             </div>
                         </div>
 
                     </div>
+
                     <div class="qualification__data">
                         <div>
+                            <h2 class="qualification__title">Computer science</h2>
+                            <span class="qualification__subtitle__no__margin">Torino - UniTO</span>
+                            <span class="qualification__subtitle active-link">
+                                <i class="uil uil-link"></i>
+                                <a class="active-link" id="qualification-education-link-thesis-txt" target="_blank" href="pdf/Tesi-Triennale.pdf"></a>
+                            </span>
+                            <div class="qualification__calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                2018 - 2021
+                            </div>
+                        </div>
+                        <div>
+                            <span class="qualification__rounder"></span>
+                            <span class="qualification__line"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="qualification__data">
+                        <div></div>
+                        <div>
+                            <span class="qualification__rounder"></span>
+                        </div>
+                        <div>
                             <h2 class="qualification__title">Artificial intelligence</h2>
-                            <span class="qualification__subtitle">Torino - University</span>
-                            <div class="qualification__calnedar">
+                            <span class="qualification__subtitle">Torino - UniTO</span>
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2021 - Today
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="qualification__content" data-content id="publishing">
+                    <div class="qualification__data">
+                        <div>
+                            <h2 class="qualification__title">Reti di Elaboratori</h2>
+                            <span class="qualification__subtitle active-link">
+                                <i class="uil uil-link"></i>
+                                <a class="active-link" id="qualification-publishing-link-1-txt" href="#"></a>
+                            </span>
+                            <div class="qualification__calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                2022
                             </div>
                         </div>
                         <div>
@@ -603,7 +735,7 @@
                         <div>
                             <h2 class="qualification__title">Software developer</h2>
                             <span class="qualification__subtitle">Asti - Dedalus</span>
-                            <div class="qualification__calnedar">
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2020 - 2021
                             </div>
@@ -614,7 +746,7 @@
                         <div>
                             <h2 class="qualification__title">Full satck developer</h2>
                             <span class="qualification__subtitle">Asti - ABC Labs</span>
-                            <div class="qualification__calnedar">
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2019 - Today
                             </div>
@@ -631,9 +763,9 @@
 
                         </div>
                         <div>
-                            <h2 class="qualification__title">AI developer</h2>
-                            <span class="qualification__subtitle">Torino - reply</span>
-                            <div class="qualification__calnedar">
+                            <h2 class="qualification__title">AI & BI developer</h2>
+                            <span class="qualification__subtitle">Torino - Reply S.P.A.</span>
+                            <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2021 - Today
                             </div>
@@ -678,7 +810,7 @@
                     <div class="portfolio__data">
                         <h2 id="abclabs-dashboard-portfolio__title-txt" class="portfolio__title"></h2>
                         <p id="abclabs-dashboard-portfolio__description-txt" class="portfolio__description"></p>
-                        <a href="abclabs.it" target="blank" class="button button--flex button--small portfolio__button">
+                        <a href="https://abclabs.it" target="blank" class="button button--flex button--small portfolio__button">
                             Demo
                             <i class="uil uil-arrow-right button__icon"></i>
                         </a>
@@ -697,6 +829,31 @@
 
         </div>
     </section>
+
+
+
+        <div class="modal__container" id="modal-container">
+            <div class="modal__content">
+                <div class="modal__close close-modal" title="Close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <div id="modal__content__Term" >
+                    <h1 id="modal__Term__title-txt" class="modal__title"></h1>
+                    <p id="modal__Term__description-txt" class="modal__description"></p>
+                </div>
+
+                <div id="modal__content__about">
+                    <h1 id="modal__about__title-txt" class="modal__title"></h1>
+                    <p id="modal__about__description-txt" class="modal__description"></p>
+                </div>
+
+
+                <i class="uil uil-times modal__icon__close close-modal"></i>
+                <i class="uil uil-times nav__close nav__icon close-modal"></i>
+            </div>
+        </div>
+
 
 
     <!--==================== CONTACT ME ====================-->
@@ -761,12 +918,12 @@
                 </div>
                 <div class="contact__content">
                     <label for="message" id="message-contact__label-txt" class="contact__label"></label>
-                    <textarea id="message" type="text" cols="0" rows="7" class="contact__input" required></textarea>
+                    <textarea id="message" cols="0" rows="7" class="contact__input" required></textarea>
                 </div>
 
                     <label class="container-check-box">
-                        Accetto <a class="contact__link" href="#">Termini e condizioni</a>
-                        <input id="check" type="checkbox">
+                        Accetto <a class="contact__link" onclick="openModal('Term')" id="open-modal"></a>
+                        <input id="check" type="checkbox" class="contact__input">
                         <span class="checkmark"></span>
                     </label>
 
@@ -780,7 +937,7 @@
                         </a>
                     </div>
                     <div>
-                        <p id="outputMessage"></p>
+                        <span id="outputMessage"></span>
                     </div>
                 </div>
             </form>
@@ -795,15 +952,15 @@
     <div class="footer__bg">
         <div class="footer__container container grid">
             <div>
-                <h1 class="footer__title">Alberto</h1>
-                <span class="footer__subtitle"></span>
+                <h1 id="footer-name" class="footer__title">Alberto</h1>
+                <span class="footer__subtitle" id="footer-subtitle-text"></span>
             </div>
             <ul class="footer__links">
                 <li>
                     <a id="footer-link-portfolio-txt" href="#portfolio" class="footer__link"></a>
                 </li>
                 <li>
-                    <a id="footer-link-contactme-txt" href="#contact" class="footer__link"></a>
+                    <a id="footer-link-contactme-txt" href="#contactme" class="footer__link"></a>
 
                 </li>
                 <li>
@@ -844,12 +1001,19 @@
 <!--==================== SWIPER JS ====================-->
 <script src="js/swiper-bundle.min.js"></script>
 
-<!--==================== MAIN JS ====================-->
-
+<!--=================== JQUERY ===================-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script src="js/language.js"></script>
-<script src="js/main.js"></script>
+<!--================= TOASTY =================-->
+<script src="js/toasty.min.js"></script>
+
+<!--================= SCROLL REVEAL =================-->
+<script src="js/scrollreveal.min.js"></script>
+
+<!--=================== MAIN JS ===================-->
+<script src="js/language.min.js"></script>
+<script src="js/main.min.js"></script>
+
 
 </body>
 
