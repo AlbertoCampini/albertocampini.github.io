@@ -29,7 +29,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
@@ -138,7 +138,8 @@
         <div class="home__container container grid">
             <div class="home__content grid">
                 <div class="home__social">
-                    <a href="https://www.linkedin.com/in/alberto-campini-a20258211/" target="_blank" rel="noopener" class="home__social-icon">
+                    <a href="https://www.linkedin.com/in/alberto-campini-a20258211/" target="_blank" rel="noopener"
+                       class="home__social-icon">
                         <i class="uil uil-linkedin-alt"></i>
                     </a>
                     <a href="https://twitter.com/AlbVx_" rel="noopener" target="_blank" class="home__social-icon">
@@ -215,8 +216,7 @@
             </span>
         <div class="about__container container grid">
 
-                <img src="img/about.jpg" alt="about image" class="about__img">
-
+            <img src="img/about.jpg" alt="about image" class="about__img">
 
 
             <div class="about__data">
@@ -263,8 +263,6 @@
         <div class="skills__container container grid">
 
 
-
-
             <div class="skills__content skills__close">
                 <div class="skills__header">
                     <i class="uil uil-brain skills__icon"></i>
@@ -280,6 +278,16 @@
                     <i class="uil uil-angle-down skills__arrow"></i>
                 </div>
                 <div class="skills__list grid">
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h2 class="skills__name">Prolog</h2>
+                            <span class="skills__number">80%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage skills__80"></span>
+                        </div>
+                    </div>
+
                     <div class="skills__data">
                         <div class="skills__titles">
                             <h2 class="skills__name">Python</h2>
@@ -672,7 +680,8 @@
                             <span class="qualification__subtitle__no__margin">Torino - UniTO</span>
                             <span class="qualification__subtitle active-link">
                                 <i class="uil uil-link"></i>
-                                <a class="active-link" id="qualification-education-link-thesis-txt" target="_blank" href="pdf/Tesi-Triennale.pdf"></a>
+                                <a class="active-link" id="qualification-education-link-thesis-txt" target="_blank"
+                                   href="pdf/Tesi-Triennale.pdf"></a>
                             </span>
                             <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
@@ -810,7 +819,8 @@
                     <div class="portfolio__data">
                         <h2 id="abclabs-dashboard-portfolio__title-txt" class="portfolio__title"></h2>
                         <p id="abclabs-dashboard-portfolio__description-txt" class="portfolio__description"></p>
-                        <a href="https://abclabs.it" target="blank" class="button button--flex button--small portfolio__button">
+                        <a href="https://abclabs.it" target="blank"
+                           class="button button--flex button--small portfolio__button">
                             Demo
                             <i class="uil uil-arrow-right button__icon"></i>
                         </a>
@@ -831,29 +841,27 @@
     </section>
 
 
-
-        <div class="modal__container" id="modal-container">
-            <div class="modal__content">
-                <div class="modal__close close-modal" title="Close">
-                    <i class='bx bx-x'></i>
-                </div>
-
-                <div id="modal__content__Term" >
-                    <h1 id="modal__Term__title-txt" class="modal__title"></h1>
-                    <p id="modal__Term__description-txt" class="modal__description"></p>
-                </div>
-
-                <div id="modal__content__about">
-                    <h1 id="modal__about__title-txt" class="modal__title"></h1>
-                    <p id="modal__about__description-txt" class="modal__description"></p>
-                </div>
-
-
-                <i class="uil uil-times modal__icon__close close-modal"></i>
-                <i class="uil uil-times nav__close nav__icon close-modal"></i>
+    <div class="modal__container" id="modal-container">
+        <div class="modal__content">
+            <div class="modal__close close-modal" title="Close">
+                <i class='bx bx-x'></i>
             </div>
-        </div>
 
+            <div id="modal__content__Term">
+                <h1 id="modal__Term__title-txt" class="modal__title"></h1>
+                <p id="modal__Term__description-txt" class="modal__description"></p>
+            </div>
+
+            <div id="modal__content__about">
+                <h1 id="modal__about__title-txt" class="modal__title"></h1>
+                <p id="modal__about__description-txt" class="modal__description"></p>
+            </div>
+
+
+            <i class="uil uil-times modal__icon__close close-modal"></i>
+            <i class="uil uil-times nav__close nav__icon close-modal"></i>
+        </div>
+    </div>
 
 
     <!--==================== CONTACT ME ====================-->
@@ -870,14 +878,23 @@
             </span>
         <div class="container contact__container grid">
             <div>
-                <div class="contact__information">
+                <!--<div class="contact__information">
                     <i class="uil uil-phone contact__icon"></i>
                     <div>
                         <h2 class="contact__title">
                                 <span id="contactme-call-section__title-txt">
                                 </span>
                         </h2>
-                        <span class="contact__subtitle">348 065 2845</span>
+                        <span class="contact__subtitle"></span>
+                    </div>
+                </div>-->
+                <div class="contact__information">
+                    <i class="uil uil-telegram-alt contact__icon"></i>
+                    <div>
+                        <h2 class="contact__title">
+                            <span id="contactme-telegram-section__title-txt">Telegram</span>
+                        </h2>
+                        <a id="" href="https://t.me/AlbVx" class="contact__subtitle">@AlbVx</a>
                     </div>
                 </div>
                 <div class="contact__information">
@@ -899,6 +916,7 @@
                         <span id="contactme-location-section__subtitle-txt" class="contact__subtitle"></span>
                     </div>
                 </div>
+
             </div>
 
             <form action="" class="contact__form grid">
@@ -921,11 +939,11 @@
                     <textarea id="message" cols="0" rows="7" class="contact__input" required></textarea>
                 </div>
 
-                    <label class="container-check-box">
-                        Accetto <a class="contact__link" onclick="openModal('Term')" id="open-modal"></a>
-                        <input id="check" type="checkbox" class="contact__input">
-                        <span class="checkmark"></span>
-                    </label>
+                <label class="container-check-box">
+                    Accetto <a class="contact__link" onclick="openModal('Term')" id="open-modal"></a>
+                    <input id="check" type="checkbox" class="contact__input">
+                    <span class="checkmark"></span>
+                </label>
 
 
                 <div class="contact__inputs grid">
@@ -1019,7 +1037,11 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136218032-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'UA-136218032-1');
