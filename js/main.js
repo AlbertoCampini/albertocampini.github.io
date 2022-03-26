@@ -66,14 +66,14 @@ function submitMessage() {
 
     if (name !== '' && surname !== '' && email !== '' && message !== '' && check === true && /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
 
+        let text = 'Hai ricevuto un messaggio da '+name+' '+surname+' \nCon la Mail: '+email+' \nCorpo del messaggio: '+message
+
         $.ajax({
-            method: "POST",
-            url: "",
+            method: "GET",
+            url: "https://api.telegram.org/bot5182757126:AAF9e7IhDzo_hnbtIm8BfSVIP5aCJ_1RvdY/sendMessage",
             data: {
-                name: name,
-                surname: surname,
-                email: email,
-                message: message
+                chat_id: -786119668,
+                text: text
             },
             success: () => {
                 running_language === 'it' ? toast.success("Messaggio inviato correttamente") : toast.success("Message sent correctly")
