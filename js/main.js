@@ -68,6 +68,7 @@ function submitMessage() {
 
         let text = 'Hai ricevuto un messaggio da '+name+' '+surname+' \nCon la Mail: '+email+' \nCorpo del messaggio: '+message
 
+        /*  Sono consapevole che questo non debba stare qui ed è una bella falla di sicurezza però dai non ho sbatti di caricare l'api su un server ed esporre il servizio quindi se vuoi rubarmi il bot sei un po' cringe :c   */
         $.ajax({
             method: "GET",
             url: "https://api.telegram.org/bot5182757126:AAF9e7IhDzo_hnbtIm8BfSVIP5aCJ_1RvdY/sendMessage",
