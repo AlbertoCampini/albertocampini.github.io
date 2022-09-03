@@ -9,7 +9,7 @@ const json_langauge = {
         { 'id': "home-title-txt", "html": "Ciao, sono Alberto" },
         { 'id': "home-subtitle-txt", "html": "Sviluppatore Full Stack e AI " },
         { 'id': "footer-subtitle-text", "html": "Sviluppatore Full Stack e AI " },
-        { 'id': "home-description-txt", "html": "Sono Alberto Campini ho " + calcYear(new Date("8/23/99") )+" anni, laureato in informatica, sviluppatore presso <b>Reply</b>, Fouder di <b>ABC Labs</b>" },
+        { 'id': "home-description-txt", "html": "Sono Alberto Campini ho " + calcYear(new Date("8/23/1999") )+" anni, laureato in informatica, sviluppatore presso <b>Reply</b>, Fouder di <b>ABC Labs</b>" },
         { 'id': "contactme-txt", "html": "Contattami" },
         { 'id': "scroll-txt", "html": "Scorri giù" },
         { 'id': "about-section__title-txt", "html": "Chi sono" },
@@ -79,7 +79,7 @@ const json_langauge = {
         { 'id': "home-title-txt", "html": "Hi, I'm Alberto" },
         { 'id': "home-subtitle-txt", "html": "Full Stack, AI Developer " },
         { 'id': "footer-subtitle-text", "html": "Full Stack, AI Developer " },
-        { 'id': "home-description-txt", "html": "My name is Alberto Campini, I have "+ calcYear(new Date("8/23/99") ) +" years, graduated in computer science, Software developer at <b>Reply</b>, Fouder of <b>ABC Labs</b>" },
+        { 'id': "home-description-txt", "html": "My name is Alberto Campini, I have "+ calcYear(new Date("8/23/1999") ) +" years, graduated in computer science, Software developer at <b>Reply</b>, Fouder of <b>ABC Labs</b>" },
         { 'id': "qualification-txt", "html": "Qualification" },
         { 'id': "scroll-txt", "html": "Scroll Down" },
         { 'id': "about-section__title-txt", "html": "About Me" },
@@ -95,9 +95,9 @@ const json_langauge = {
         { 'id': "skills-section__subtitle-txt", "html": "My technical level" },
         { 'id': "Frontend-skills__subtitle-txt", "html": "More than " + calcYear(new Date("1/1/2017") ) + " years" },
         { 'id': "Backend-skills__subtitle-txt", "html": "More than " + calcYear(new Date("1/1/2018") ) + " years" },
-        { 'id': "AI-skills__subtitle-txt", "html": "Only " + calcYear(new Date("9/15/2020") ) + " year" },
-        { 'id': "BI-skills__subtitle-txt", "html": "Only " + calcYear(new Date("9/15/2020") ) + " year" },
-        { 'id': "SW-skills__subtitle-txt", "html": "Only " + calcYear(new Date("9/15/2020") ) + " year" },
+        { 'id': "AI-skills__subtitle-txt", "html": "Only " + calcYear(new Date("9/1/2021") ) + " year" },
+        { 'id': "BI-skills__subtitle-txt", "html": "Only " + calcYear(new Date("9/1/2021") ) + " year" },
+        { 'id': "SW-skills__subtitle-txt", "html": "Only " + calcYear(new Date("9/1/2021") ) + " year" },
         { 'id': "qualification-section__title-txt", "html": "Qualification" },
         { 'id': "qualification-section__subtitle-txt", "html": "My personal journey" },
         { 'id': "qualification-work-button-txt", "html": "Work" },
@@ -142,8 +142,9 @@ const json_langauge = {
 
 function calcYear(dateStart) {
     const now = new Date(Date.now())
-        if(dateStart.getMonth() <= now.getMonth())
-            if(dateStart.getDate() < now.getDate())
-                return now.getFullYear() - dateStart.getFullYear()
+        if(dateStart.getMonth() < now.getMonth())
+            return now.getFullYear() - dateStart.getFullYear()
+        if(dateStart.getMonth() === now.getMonth() && dateStart.getDay() < now.getDay())
+            return now.getFullYear() - dateStart.getFullYear()
         return now.getFullYear() - dateStart.getFullYear() - 1
 }
