@@ -9,7 +9,7 @@ const json_langauge = {
         { 'id': "home-title-txt", "html": "Ciao, sono Alberto" },
         { 'id': "home-subtitle-txt", "html": "Sviluppatore Full Stack e AI " },
         { 'id': "footer-subtitle-text", "html": "Sviluppatore Full Stack e AI " },
-        { 'id': "home-description-txt", "html": "Sono Alberto Campini ho " +calcYear(new Date("8/23/99") )+" anni, laureato in informatica, sviluppatore presso <b>Reply</b>, Fouder di <b>ABC Labs</b>" },
+        { 'id': "home-description-txt", "html": "Sono Alberto Campini ho " + calcYear(new Date("8/23/99") )+" anni, laureato in informatica, sviluppatore presso <b>Reply</b>, Fouder di <b>ABC Labs</b>" },
         { 'id': "contactme-txt", "html": "Contattami" },
         { 'id': "scroll-txt", "html": "Scorri giù" },
         { 'id': "about-section__title-txt", "html": "Chi sono" },
@@ -53,6 +53,12 @@ const json_langauge = {
         { 'id': "portfolio-section__subtitle-txt", "html": "I progetti più recenti" },
         { 'id': "abclabs-portfolio__title-txt", "html": "ABC Labs sito vetrina" },
         { 'id': "abclabs-portfolio__description-txt", "html": "Il sito vetrina di ABC Labs, un'azienda di sviluppo software. Progetto svolto con HTML, CSS, JS. Integrazione con bot di Telegram per le comunicazioni e google analytics" },
+        { 'id': "visual-algo-portfolio__title-txt", "html": "Dijkstra Visual algorithm" },
+        { 'id': "visual-algo-portfolio__description-txt", "html": "Un progetto personale sviluppoato a supporto degli esercizi di algoritmi e strutture dati per visuliazzare la risuluzione dell'algoritmo di Dijkstra su un qualisi grafo. L'idea è quella di implementare altri algortimi di risoluzione. Utilizzo della libreria vis.js" },
+        { 'id': "prolog-portfolio__title-txt", "html": "Cattura gli obiettivi" },
+        { 'id': "prolog-portfolio__description-txt", "html": "Progetto di ricerca nello spazio degli stati usando Prolog per permettere ad un agente di muoversi in un labirinto privo di uscite per cercare catturare tutti i checkpont presenti muovendosi nelle 8 direzioni con l'obiettivo di ottimizzare il percorso. Utilizzo di backtracking e Sub-Goaling" },
+        { 'id': "mmsd-portfolio__title-txt", "html": "Ottimizzazione Calendario Esami Universitari" },
+        { 'id': "mmsd-portfolio__description-txt", "html": "Progetto in ambito di ricerca svilto per l'università degli studi di Torino con il focus di sviluppare un modello per ottimizzare l'assegnazione degli esami del corso triennale di informatica ottimizzando le distaze, preferenze dei professori e disponibilità delle aule. Svolto utilizzadno Python, pyomo, PySimpleGUI e programmazione lineare." },
         { 'id': "abclabs-dashboard-portfolio__title-txt", "html": "ABC Labs pannello gestionale" },
         { 'id': "abclabs-dashboard-portfolio__description-txt", "html": "Il pannello gestionale di ABC Labs nel quale i clienti possono visionare statistiche, generare report e ticket. Piattaforma che gestisce in completa autonomia pagamenti ricorrenti. Progetto svolto con  HTML, CSS, JS, NodeJS per il backend" },
         { 'id': "modal__Term__title-txt", "html": "Termini e condizioni" },
@@ -117,6 +123,12 @@ const json_langauge = {
         { 'id': "portfolio-section__title-txt", "html": "Portfolio" },
         { 'id': "portfolio-section__subtitle-txt", "html": "Most recent projects" },
         { 'id': "abclabs-portfolio__title-txt", "html": "ABC Labs static website" },
+        { 'id': "visual-algo-portfolio__title-txt", "html": "Dijkstra Visual algorithm" },
+        { 'id': "prolog-portfolio__title-txt", "html": "Capture targets" },
+        { 'id': "prolog-portfolio__description-txt", "html": "Research project in the space of the states using Prolog to allow an agent to move in a labyrinth without exits to try to capture all the checkponts present moving in the 8 directions with the aim of optimizing the path. Using Backtracking and Sub-Goaling" },
+        { 'id': "visual-algo-portfolio__description-txt", "html": "A personal project developed to support the exercises of algorithms and data structures to visualize the resolution of Dijkstra's algorithm on any graph. The idea is to implement other resolution algorithms. Using the vis.js library" },
+        { 'id': "mmsd-portfolio__title-txt", "html": "Optimization of the University Exam Calendar" },
+        { 'id': "mmsd-portfolio__description-txt", "html": "Research project developed for the University of Turin with the focus on developing a model to optimize the assignment of the three-year computer science course exams by optimizing distances, professors' preferences and classroom availability. Done using Python, pyomo, PySimpleGUI and linear programming." },
         { 'id': "abclabs-portfolio__description-txt", "html": "The showcase site of ABC Labs, a software development company. Project done with HTML, CSS, JS. Integration with Telegram bot for communications and google analytics" },
         { 'id': "abclabs-dashboard-portfolio__title-txt", "html": "ABC Labs dashboard" },
         { 'id': "abclabs-dashboard-portfolio__description-txt", "html": "The ABC Labs management panel where customers can view statistics, generate reports and tickets. Platform that manages recurring payments in complete autonomy. Project done with HTML, CSS, JS, NodeJS for the backend." },
@@ -130,8 +142,8 @@ const json_langauge = {
 
 function calcYear(dateStart) {
     const now = new Date(Date.now())
-    if(dateStart.getMonth() < now.getMonth())
-        if(dateStart.getDate() < now.getDate())
-            return now.getFullYear() - dateStart.getFullYear()
-    return now.getFullYear() - dateStart.getFullYear() - 1
+        if(dateStart.getMonth() <= now.getMonth())
+            if(dateStart.getDate() < now.getDate())
+                return now.getFullYear() - dateStart.getFullYear()
+        return now.getFullYear() - dateStart.getFullYear() - 1
 }
