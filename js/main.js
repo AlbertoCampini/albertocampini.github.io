@@ -56,43 +56,68 @@ function changeLanguage(string) {
     running_language = string
 }
 
+function text(url) {
+    return fetch(url).then(res => res.text());
+}
+
 function submitMessage() {
     const name = document.getElementById("name").value;
     const surname = document.getElementById("surname").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
     const check = document.getElementById("check").checked;
+    let ip = null;
 
+    text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+        let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
+        let ip = data.match(ipRegex)[0];
+        if(sanitizeMail(email)){
+            if (name !== '' && surname !== '' && email !== '' && message !== '' && check === true && /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email) ) {
 
-    if (name !== '' && surname !== '' && email !== '' && message !== '' && check === true && /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+                let text = '['+ip+'] Hai ricevuto un messaggio da '+name+' '+surname+' \nCon la Mail: '+email+' \nCorpo del messaggio: '+message
 
-        let text = 'Hai ricevuto un messaggio da '+name+' '+surname+' \nCon la Mail: '+email+' \nCorpo del messaggio: '+message
-
-        /*  Sono consapevole che questo non debba stare qui ed è una bella falla di sicurezza però dai non ho sbatti di caricare l'api su un server ed esporre il servizio quindi se vuoi rubarmi il bot sei un po' cringe :c   */
-        $.ajax({
-            method: "GET",
-            url: "https://api.telegram.org/bot5182757126:AAF9e7IhDzo_hnbtIm8BfSVIP5aCJ_1RvdY/sendMessage",
-            data: {
-                chat_id: -786119668,
-                text: text
-            },
-            success: () => {
-                running_language === 'it' ? toast.success("Messaggio inviato correttamente") : toast.success("Message sent correctly")
-                document.querySelectorAll(".contact__input").forEach(function (element) {
-                    element.value = ""
+                /*  Sono consapevole che questo non debba stare qui ed è una bella falla di sicurezza però dai non ho sbatti di caricare l'api su un server ed esporre il servizio quindi se vuoi rubarmi il bot sei un po' cringe :c   */
+                $.ajax({
+                    method: "GET",
+                    url: "https://api.telegram.org/bot5182757126:AAF9e7IhDzo_hnbtIm8BfSVIP5aCJ_1RvdY/sendMessage",
+                    data: {
+                        chat_id: -786119668,
+                        text: text
+                    },
+                    success: () => {
+                        running_language === 'it' ? toast.success("Messaggio inviato correttamente") : toast.success("Message sent correctly")
+                        document.querySelectorAll(".contact__input").forEach(function (element) {
+                            element.value = ""
+                        });
+                    },
+                    error: () => {
+                        running_language === 'it' ? toast.error("Controlla di aver inserito correttamente i dati all'interno del form") : toast.error("Check that you have correctly inserted the data within the module")
+                    }
                 });
-            },
-            error: () => {
+
+
+            } else {
                 running_language === 'it' ? toast.error("Controlla di aver inserito correttamente i dati all'interno del form") : toast.error("Check that you have correctly inserted the data within the module")
+
             }
-        });
+        }else{
+            running_language === 'it' ? toast.error("Per potermi contattare utilizza una mail valida, odio lo SPAM. Thx :)") : toast.error("To contact me use a valid email, I hate SPAM. Thx :)")
+        }
+
+    });
 
 
-    } else {
-        running_language === 'it' ? toast.error("Controlla di aver inserito correttamente i dati all'interno del form") : toast.error("Check that you have correctly inserted the data within the module")
+}
 
-    }
-
+function sanitizeMail(mail){
+const accept_mail = ["gmail","yahoo","hotmail","icloud","libero"]
+    let response = false
+    accept_mail.forEach((elem)=>{
+        if(mail.includes(elem)){
+            response = true
+        }
+    })
+    return response
 }
 
 
