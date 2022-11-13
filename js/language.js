@@ -65,7 +65,10 @@ const json_langauge = {
         { 'id': "open-modal", "html": "Termini e condizioni" },
         { 'id': "modal__Term__description-txt", "html": "Nessuna informazione personali fornita mediante il form dei contatti non è trattata dal presente sito web ne da terzi, ma vengono utilizzate unicamente per lo scopo di inviare il messaggio presente nel campo 'messaggio' " },
         { 'id': "modal__about__title-txt", "html": "La mia storia" },
-        { 'id': "modal__about__description-txt", "html": "Apprezzo molto che tu sia interessato :) prometto che carichero a breve la mia storia nel dettaglio" }
+        { 'id': "modal__about__description-txt", "html": "Apprezzo molto che tu sia interessato :) prometto che carichero a breve la mia storia nel dettaglio" },
+        { 'id': "reminder-portfolio__title-txt", "html": "Reminder Bot Telegram" },
+        { 'id': "reminder-portfolio__description-txt", "html": "Il progetto è attualmente utilizzato come assiste nei vari progetti, permette di schedulare attività ricorrenti come remider o backup automatici, inoltre espone un'API utilizzata per notificare errori a run time nei vari programmi. Il progetto è stato sviluppato utilizzadno JAva Spring boot, Docker, Telegram API e deployato su Azure" }
+
 
     ],
 
