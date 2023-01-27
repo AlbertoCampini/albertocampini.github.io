@@ -38,7 +38,7 @@
     <link rel="manifest" href="js/manifest.json">
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/toasty.min.css">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
@@ -691,7 +691,8 @@
 
                     <div class="qualification__data">
                         <div>
-                            <h2 class="qualification__title">Computer science</h2>
+                            <h2 class="qualification__title">Computer science
+                                <a class="active-link" onclick="openModal('Info Uni 3')" ><i class="uil uil-info-circle"></i></a></h2>
                             <span class="qualification__subtitle__no__margin">Torino - UniTO</span>
                             <span class="qualification__subtitle active-link">
                                 <i class="uil uil-link"></i>
@@ -716,7 +717,8 @@
                             <span class="qualification__rounder"></span>
                         </div>
                         <div>
-                            <h2 class="qualification__title">Artificial intelligence</h2>
+                            <h2 class="qualification__title">Artificial intelligence
+                                <a class="active-link"  onclick="openModal('Info Uni 5')"><i class="uil uil-info-circle"></i></a></h2>
                             <span class="qualification__subtitle">Torino - UniTO</span>
                             <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
@@ -894,6 +896,19 @@
                     </div>
                 </div>
 
+                <div class="portfolio__content grid__vertical swiper-slide">
+                    <img src="img/Falappy-bird.gif" alt="" class="portfolio__img__vertical">
+                    <div class="portfolio__data">
+                        <h2 id="flappy-portfolio__title-txt" class="portfolio__title"></h2>
+                        <p id="flappy-portfolio__description-txt" class="portfolio__description"></p>
+                        <a href="https://albertocampini.github.io/Flappy-Bird/" target="blank"
+                           class="button button--flex button--small portfolio__button">
+                            Demo
+                            <i class="uil uil-arrow-right button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+
               <!--  <div class="portfolio__content grid swiper-slide">
                     <img src="img/MMSD.gif" alt="" class="portfolio__img">
                     <div class="portfolio__data">
@@ -930,6 +945,51 @@
             <div id="modal__content__Term">
                 <h1 id="modal__Term__title-txt" class="modal__title"></h1>
                 <p id="modal__Term__description-txt" class="modal__description"></p>
+            </div>
+
+            <div id="modal__content__about__uni__3">
+                <h1 id="modal__content__about__uni__3__title-txt" class="modal__title"></h1>
+                <ul id="modal__content__about__uni__3__description-txt" class="modal__description">
+                    <li>Programmazione I</li>
+                    <li>Matematica dicreta e Logica</li>
+                    <li>Analisi</li>
+                    <li>Ricerca operativa</li>
+                    <li>Architettura degli elaboratori</li>
+                    <li>Programmazione II</li>
+                    <li>Sistemi Operativi</li>
+                    <li>Linguaggi formali e traduttori</li>
+                    <li>Probabilità e statistica</li>
+                    <li>Algoritmi e strutture dati</li>
+                    <li>Fisica</li>
+                    <li>Database</li>
+                    <li>Economia</li>
+                    <li>Diritto</li>
+                    <li>Programmazione III</li>
+                    <li>Linguaggi e pradigmi di programmazione</li>
+                    <li>Reti di elaboratori</li>
+                    <li>Tecnologie Web</li>
+                    <li>Sviluppo applicazioni software</li>
+                    <li>Sicurezza</li>
+
+                </ul>
+            </div>
+
+            <div id="modal__content__about__uni__5">
+                <h1 id="modal__content__about__uni__5__title-txt" class="modal__title"></h1>
+                <ul id="modal__content__about__uni__5__description-txt" class="modal__description">
+                    <li>Itelligenza Artificaile e Laboratorio</li>
+                    <li>Archietture avanzate sviluppo software</li>
+                    <li>Natural language process</li>
+                    <li>Reti Neurali e Deep learning</li>
+                    <li>Agenti intelligenti</li>
+                    <li>Sistemi intelligenti</li>
+                    <li>Apprendimento automatico</li>
+                    <li>Semantic Web</li>
+                    <li>Ottimizzazione combinatorica</li>
+                    <li>Etica Società e Privacy</li>
+                    <li>Modelli a supporto delle decisioni</li>
+                    <li>Economia</li>
+                </ul>
             </div>
 
             <div id="modal__content__about">
@@ -1110,7 +1170,7 @@
 <script src="js/scrollreveal.min.js"></script>
 
 <!--=================== MAIN JS ===================-->
-<script src="js/language.js"></script>
+<script src="js/language.min.js"></script>
 <script src="js/main.min.js"></script>
 
 

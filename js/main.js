@@ -34,6 +34,8 @@ let running_language = (navigator.language || navigator.userLanguage).substring(
 
 changeLanguage(running_language)
 
+//changeColor(Math.random() * (359))
+
 function wrapperChangeLanguage() {
     const audioChangeLanguage = document.getElementById("audio-change-language")
 
@@ -180,15 +182,33 @@ function openModal(target) {
     const modalContainer = document.getElementById('modal-container')
     const modalContentTerm = document.getElementById('modal__content__Term')
     const modalContentAbout = document.getElementById('modal__content__about')
+    const modalContentAboutUni3 = document.getElementById('modal__content__about__uni__3')
+    const modalContentAboutUni5 = document.getElementById('modal__content__about__uni__5')
 
     switch (target) {
         case 'About':
-            modalContentTerm.classList.add("d-none")
             modalContentAbout.classList.remove("d-none")
+            modalContentTerm.classList.add("d-none")
+            modalContentAboutUni3.classList.add("d-none")
+            modalContentAboutUni5.classList.add("d-none")
             break;
         case 'Term':
             modalContentTerm.classList.remove("d-none")
             modalContentAbout.classList.add("d-none")
+            modalContentAboutUni3.classList.add("d-none")
+            modalContentAboutUni5.classList.add("d-none")
+            break;
+        case 'Info Uni 3':
+            modalContentAboutUni3.classList.remove("d-none")
+            modalContentAbout.classList.add("d-none")
+            modalContentTerm.classList.add("d-none")
+            modalContentAboutUni5.classList.add("d-none")
+            break;
+        case 'Info Uni 5':
+            modalContentAboutUni5.classList.remove("d-none")
+            modalContentAbout.classList.add("d-none")
+            modalContentTerm.classList.add("d-none")
+            modalContentAboutUni3.classList.add("d-none")
             break;
 
     }
