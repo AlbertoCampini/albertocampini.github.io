@@ -759,6 +759,16 @@ img {
     color: var(--first-color);
 }
 
+.nav__close__sticky{
+    right: -0.7rem;
+    bottom: -1.5rem;
+}
+.modal__sticky__close{
+    bottom: 0;
+    left: 0;
+    position: sticky;
+}
+
 
 /*==================== PORTFOLIO ====================*/
 
@@ -885,7 +895,7 @@ img {
     transition: all .3s;
 
     overflow-y: auto;
-    max-height: 60vh;
+    max-height: 50vh;
 
 
     /*=== Effect 1 ===*/

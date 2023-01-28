@@ -414,7 +414,9 @@ themeButton.addEventListener('click', () => {
 })
 
 function changeColor(value) {
+    const slider = document.getElementById("color-slider")
     document.documentElement.style.setProperty("--hue-color", value);
+    slider.value = value
 
 }
 

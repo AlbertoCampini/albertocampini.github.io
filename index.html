@@ -54,7 +54,7 @@
         <a href='#' onclick="changeColor(Math.random() * (359))" class="nav__logo">Alberto</a>
         <div class="nav__menu-color" id="nav-menu-color">
             <div>
-                <input type="range" id="color-slieder" class="slider" oninput="changeColor(this.value)" min="0"
+                <input type="range" id="color-slider" class="slider" oninput="changeColor(this.value)" min="0"
                        max="359" value="230">
             </div>
             <i class="uil uil-times nav__close nav__icon" id="nav-close-color"></i>
@@ -998,8 +998,11 @@
             </div>
 
 
-            <i class="uil uil-times modal__icon__close close-modal"></i>
-            <i class="uil uil-times nav__close nav__icon close-modal"></i>
+                <i class="uil uil-times modal__icon__close close-modal"></i>
+            <div class="modal__sticky__close">
+                <i class="uil uil-times nav__close nav__close__sticky nav__icon close-modal"></i>
+            </div>
+
         </div>
     </div>
 
