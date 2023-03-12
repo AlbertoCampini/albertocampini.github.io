@@ -72,11 +72,11 @@ function submitMessage() {
 
     text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
         let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
-        let ip = data.match(ipRegex)[0];
+        //let ip = data.match(ipRegex)[0];
         if(sanitizeMail(email)){
             if (name !== '' && surname !== '' && email !== '' && message !== '' && check === true && /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email) ) {
 
-                let text = '['+ip+'] Hai ricevuto un messaggio da '+name+' '+surname+' \nCon la Mail: '+email+' \nCorpo del messaggio: '+message
+                let text = 'Hai ricevuto un messaggio da '+name+' '+surname+' \nCon la Mail: '+email+' \nCorpo del messaggio: '+message
 
                 /*  Sono consapevole che questo non debba stare qui ed è una bella falla di sicurezza però dai non ho sbatti di caricare l'api su un server ed esporre il servizio quindi se vuoi rubarmi il bot sei un po' cringe :c   */
                 $.ajax({
