@@ -9,24 +9,24 @@ const json_langauge = {
         { 'id': "home-title-txt", "html": "Ciao, sono Alberto" },
         { 'id': "home-subtitle-txt", "html": "Sviluppatore Full Stack e AI " },
         { 'id': "footer-subtitle-text", "html": "Sviluppatore Full Stack e AI " },
-        { 'id': "home-description-txt", "html": "Sono Alberto Campini ho " + calcYear(new Date("8/23/1999") )+" anni, laureato in informatica, sviluppatore presso <b>Reply</b>, Fouder di <b>ABC Labs</b>" },
+        { 'id': "home-description-txt", "html": "Sono Alberto Campini ho " + calcolaAnniPassati(new Date("8/23/1999") )+" anni, laureato in informatica, sviluppatore presso <b>Reply</b>, Fouder di <b>ABC Labs</b>" },
         { 'id': "contactme-txt", "html": "Contattami" },
         { 'id': "scroll-txt", "html": "Scorri giù" },
         { 'id': "about-section__title-txt", "html": "Chi sono" },
         { 'id': "about-section__subtitle-txt", "html": "Qualcosa su di me" },
         { 'id': "about__description-txt", "html": "Sono Alberto Campini, nato ad Asti il 23 agosto del <b>1999</b>. Sin da subito ho avuto le idee chiare su cosa volessi fare da grande. Ho fondato assieme a due soci la mia prima società, <b>ABC Labs</b>, nel marzo del 2021. Attualmente sono un AI & BI developer presso <b>Cluster Reply</b> e studente magistrale di Intelligenza Artificiale <a onclick=\"openModal('About')\" class=\"more__info__about__link\">Voglio saperne di più <i class=\"uil uil-plus active-link\"></i></a>" },
         { 'id': "about__info-experience-txt", "html": "Anni di <br> esperienza" },
-        { 'id': "about__info-experience-number-txt", "html": "0" + calcYear(new Date("1/1/2017") )  + "+" },
+        { 'id': "about__info-experience-number-txt", "html": "0" + calcolaAnniPassati(new Date("1/1/2017") )  + "+" },
         { 'id': "about__info-project-txt", "html": "Progetti <br> completati" },
         { 'id': "about__info-companies-txt", "html": "Aziende in cui <br> ho lavorato" },
         { 'id': "about__buttons-txt", "html": "Download CV" },
         { 'id': "skills-section__title-txt", "html": "Skills" },
         { 'id': "skills-section__subtitle-txt", "html": "Il mio livello tecnico" },
-        { 'id': "Frontend-skills__subtitle-txt", "html": "Più di " + calcYear(new Date("1/1/2017") )  + " anni" },
-        { 'id': "Backend-skills__subtitle-txt", "html": "Più di " + calcYear(new Date("1/1/2018") )  + " anni" },
-        { 'id': "AI-skills__subtitle-txt", "html": "Solo " + calcYear(new Date("9/15/2021") ) + " anno" },
-        { 'id': "BI-skills__subtitle-txt", "html": "Solo " + calcYear(new Date("9/15/2021") ) + " anno" },
-        { 'id': "SW-skills__subtitle-txt", "html": "Solo " + calcYear(new Date("9/15/2021") ) + " anno" },
+        { 'id': "Frontend-skills__subtitle-txt", "html": "Più di " + calcolaAnniPassati(new Date("1/1/2017") )  + " anni" },
+        { 'id': "Backend-skills__subtitle-txt", "html": "Più di " + calcolaAnniPassati(new Date("1/1/2018") )  + " anni" },
+        { 'id': "AI-skills__subtitle-txt", "html": "Solo " + calcolaAnniPassati(new Date("9/15/2021") ) + " anno" },
+        { 'id': "BI-skills__subtitle-txt", "html": "Solo " + calcolaAnniPassati(new Date("9/15/2021") ) + " anno" },
+        { 'id': "SW-skills__subtitle-txt", "html": "Solo " + calcolaAnniPassati(new Date("9/15/2021") ) + " anno" },
         { 'id': "qualification-section__title-txt", "html": "Esperienza" },
         { 'id': "qualification-section__subtitle-txt", "html": "Il mio viaggio personale" },
         { 'id': "qualification-work-button-txt", "html": "Lavoro" },
@@ -61,6 +61,8 @@ const json_langauge = {
         { 'id': "mmsd-portfolio__description-txt", "html": "Progetto in ambito di ricerca svolto per l'università degli studi di Torino, Il focus del progetto è stato quello di sviluppare un modello per ottimizzare l'assegnazione degli esami del corso triennale di informatica ottimizzando le distaze, preferenze dei professori e disponibilità delle aule. Svolto utilizzadno Python, pyomo, PySimpleGUI e programmazione lineare." },
         { 'id': "flappy-portfolio__title-txt", "html": "JS Flappy Bird " },
         { 'id': "flappy-portfolio__description-txt", "html": "Replica del famoso gioco flappy bird utlizzando javascript vanilla. L'idea sarebbe quella di partire da questa base e tramite rete neurale feed forward farne una versione automatica ed evolutiva sino a trovare la configuazione di pesi che permette di vincere il gioco" },
+        { 'id': "OC-portfolio__title-txt", "html": "Multi Commodity Min Cost Flow" },
+        { 'id': "OC-portfolio__description-txt", "html": "Il seguente lavoro è una trattazione approfondita del problema di flusso su rete conosciuto come Multi Commodity Min Cost flow. comprende un'introduzione al problema appoggiandosi alla sua versione generalizzata e successivamente si andrà nel dettaglio cercando di individuare gli elementi complicanti, i possibili rilassamenti e approcci risolutivi"},
         { 'id': "abclabs-dashboard-portfolio__title-txt", "html": "ABC Labs pannello gestionale" },
         { 'id': "abclabs-dashboard-portfolio__description-txt", "html": "Il pannello gestionale di ABC Labs nel quale i clienti possono visionare statistiche, generare report e ticket. Piattaforma che gestisce in completa autonomia pagamenti ricorrenti. Progetto svolto con  HTML, CSS, JS, NodeJS per il backend" },
         { 'id': "modal__Term__title-txt", "html": "Termini e condizioni" },
@@ -84,7 +86,7 @@ const json_langauge = {
         { 'id': "home-title-txt", "html": "Hi, I'm Alberto" },
         { 'id': "home-subtitle-txt", "html": "Full Stack, AI Developer " },
         { 'id': "footer-subtitle-text", "html": "Full Stack, AI Developer " },
-        { 'id': "home-description-txt", "html": "My name is Alberto Campini, I have "+ calcYear(new Date("8/23/1999") ) +" years, graduated in computer science, Software developer at <b>Reply</b>, Fouder of <b>ABC Labs</b>" },
+        { 'id': "home-description-txt", "html": "My name is Alberto Campini, I have "+ calcolaAnniPassati(new Date("8/23/1999") ) +" years, graduated in computer science, Software developer at <b>Reply</b>, Fouder of <b>ABC Labs</b>" },
         { 'id': "qualification-txt", "html": "Qualification" },
         { 'id': "scroll-txt", "html": "Scroll Down" },
         { 'id': "about-section__title-txt", "html": "About Me" },
@@ -92,17 +94,17 @@ const json_langauge = {
         { 'id': "about__description-txt", "html": "I'm Alberto Campini, born in Asti on August 23 of <b> 1999 </b>. Right from the start I had clear ideas about what I wanted to do when I grew up. I founded my first company, <b> ABC Labs </b>, together with two partners in March 2021. Now I'm an AI & BI developer at <b> Cluster Reply </b> and a master's student in Artificial Intelligence.<a onclick=\"openModal('About')\" class=\"more__info__about__link\">I want more information <i class=\"uil uil-plus active-link\"></i></a>" },
         { 'id': "about__description__more__info-txt", "html":"Voglio saperne di più"},
         { 'id': "about__info-experience-txt", "html": "Years <br> experience" },
-        { 'id': "about__info-experience-number-txt", "html": "0" + calcYear(new Date("1/1/2017") ) + "+" },
+        { 'id': "about__info-experience-number-txt", "html": "0" + calcolaAnniPassati(new Date("1/1/2017") ) + "+" },
         { 'id': "about__info-project-txt", "html": "Completated <br> Projects" },
         { 'id': "about__info-companies-txt", "html": "Companies <br> worked" },
         { 'id': "about__buttons-txt", "html": "Download CV" },
         { 'id': "skills-section__title-txt", "html": "Skills" },
         { 'id': "skills-section__subtitle-txt", "html": "My technical level" },
-        { 'id': "Frontend-skills__subtitle-txt", "html": "More than " + calcYear(new Date("1/1/2017") ) + " years" },
-        { 'id': "Backend-skills__subtitle-txt", "html": "More than " + calcYear(new Date("1/1/2018") ) + " years" },
-        { 'id': "AI-skills__subtitle-txt", "html": "Only " + calcYear(new Date("9/15/2021") ) + " year" },
-        { 'id': "BI-skills__subtitle-txt", "html": "Only " + calcYear(new Date("9/15/2021") ) + " year" },
-        { 'id': "SW-skills__subtitle-txt", "html": "Only " + calcYear(new Date("9/15/2021") ) + " year" },
+        { 'id': "Frontend-skills__subtitle-txt", "html": "More than " + calcolaAnniPassati(new Date("1/1/2017") ) + " years" },
+        { 'id': "Backend-skills__subtitle-txt", "html": "More than " + calcolaAnniPassati(new Date("1/1/2018") ) + " years" },
+        { 'id': "AI-skills__subtitle-txt", "html": "Only " + calcolaAnniPassati(new Date("9/15/2021") ) + " year" },
+        { 'id': "BI-skills__subtitle-txt", "html": "Only " + calcolaAnniPassati(new Date("9/15/2021") ) + " year" },
+        { 'id': "SW-skills__subtitle-txt", "html": "Only " + calcolaAnniPassati(new Date("9/15/2021") ) + " year" },
         { 'id': "qualification-section__title-txt", "html": "Qualification" },
         { 'id': "qualification-section__subtitle-txt", "html": "My personal journey" },
         { 'id': "qualification-work-button-txt", "html": "Work" },
@@ -139,6 +141,8 @@ const json_langauge = {
         { 'id': "abclabs-dashboard-portfolio__description-txt", "html": "The ABC Labs management panel where customers can view statistics, generate reports and tickets. Platform that manages recurring payments in complete autonomy. Project done with HTML, CSS, JS, NodeJS for the backend." },
         { 'id': "modal__Term__title-txt", "html": "Term & Conditions" },
         { 'id': "flappy-portfolio__title-txt", "html": "JS Flappy Bird " },
+        {"id": "OC-portfolio__title-txt","html": "Multi Commodity Min Cost Flow"},
+        {"id": "OC-portfolio__description-txt","html": "The following work is an in-depth study of the network flow problem known as Multi Commodity Min Cost Flow. It includes an introduction to the problem, based on its generalized version, and then delves into the details, aiming to identify complicating elements, potential relaxations, and solving approaches."},
         { 'id': "flappy-portfolio__description-txt", "html": "Replica of the famous flappy bird game using vanilla javascript. The idea would be to start from this base and using a feed forward neural network to make an automatic and evolutionary version of it until finding the weight configuration that allows you to win the game" },
         { 'id': "open-modal", "html": "Term & Conditions" },
         { 'id': "modal__Term__description-txt", "html": "No personal information provided through the contact form is not processed by this website or by third parties, but are used solely for the purpose of sending the message in the 'message' field" },
@@ -147,11 +151,13 @@ const json_langauge = {
     ]
 };
 
-function calcYear(dateStart) {
-    const now = new Date(Date.now())
-        if(dateStart.getMonth() < now.getMonth())
-            return now.getFullYear() - dateStart.getFullYear()
-        if(dateStart.getMonth() === now.getMonth() && dateStart.getDay() < now.getDay())
-            return now.getFullYear() - dateStart.getFullYear()
-        return now.getFullYear() - dateStart.getFullYear() - 1
+function calcolaAnniPassati(dataPassata) {
+    const dataOdierna = new Date();
+    const differenzaInMillisecondi = dataOdierna - dataPassata;
+
+    // Calcola il numero di millisecondi in un anno (considerando anche gli anni bisestili)
+    const millisecondiInUnAnno = 31536000000; // 1000 ms * 60 s * 60 min * 24 h * 365 days
+
+    const anniPassati = Math.floor(differenzaInMillisecondi / millisecondiInUnAnno);
+    return anniPassati;
 }
