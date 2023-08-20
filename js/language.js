@@ -156,7 +156,7 @@ function calcolaAnniPassati(dataPassata) {
     const differenzaInMillisecondi = dataOdierna - dataPassata;
 
     // Calcola il numero di millisecondi in un anno (considerando anche gli anni bisestili)
-    const millisecondiInUnAnno = 31536000000; // 1000 ms * 60 s * 60 min * 24 h * 365 days
+    const millisecondiInUnAnno = 31560000000; // 1000 ms * 60 s * 60 min * 24 h * 365 days
 
     const anniPassati = Math.floor(differenzaInMillisecondi / millisecondiInUnAnno);
     return anniPassati;
